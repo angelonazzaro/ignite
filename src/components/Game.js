@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 
 import { smallImage } from "../util";
 
+import { popup } from '../Animations';
+
 function Game({game}) {
     const dispatch = useDispatch();
     const loadDetailHandler = () => {
@@ -16,7 +18,7 @@ function Game({game}) {
     }
 
     return (
-        <StyledGame layoutId={game.id} onClick={loadDetailHandler}>
+        <StyledGame variants={popup} initial="hidden" animate="show" layoutId={game.id} onClick={loadDetailHandler}>
             <Link to={`/game/${game.id}`}>
                 <motion.h3 layoutId={`title ${game.id}`}>{game.name}</motion.h3>
                 <p>{game.released}</p>

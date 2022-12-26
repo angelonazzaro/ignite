@@ -4,12 +4,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { loadGames } from "../actions/gamesActions";
 
 import styled from "styled-components";
-import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 import Game from "../components/Game";
 import GameDetail from "../components/GameDetail";
 
 import { useLocation } from "react-router-dom";
+import { fadeIn } from "../Animations";
 
 function Home() {
 
@@ -22,13 +23,21 @@ function Home() {
         dispatch(loadGames())
     }, [dispatch]);
     // Get the data from the now populated state
-    const {popularGames, newGames, upComingGames} = useSelector(store => store.games); 
+    const {popularGames, newGames, upComingGames, searchedGames} = useSelector(store => store.games); 
 
     return (
-        <GameList>
+        <GameList variants={fadeIn} initial="hidden" animate="show">
             <AnimatePresence>
                 {pathId !== undefined && <GameDetail pathId={parseInt(pathId)}/>}
             </AnimatePresence>
+            {searchedGames.length ? (
+                <div className="searched">
+                    <h2>Searched Games</h2>
+                    <Games>
+                    {searchedGames.map((game) => <Game key={game.id} game={game} />)}
+                    </Games>
+                </div>
+            ) : ( "" )}
             <h2>UpComing Games</h2>
             <Games>
                 {upComingGames.map((game) => <Game key={game.id} game={game} />)}
