@@ -3,10 +3,10 @@
     <br>
     <p align="center">
         <img src="https://img.shields.io/badge/PRs-welcome-brightgreen?style=for-the-badge" />
-        <img src="https://img.shields.io/github/languages/top/sl1mSha4dey/capture?style=for-the-badge" />
+        <img src="https://img.shields.io/github/languages/top/sl1mSha4dey/ignite?style=for-the-badge" />
     </p>
     <p align="center">
-        <img src="https://img.shields.io/github/contributors/sl1mSha4dey/capture?color=brightgreen&style=for-the-badge" />
+        <img src="https://img.shields.io/github/contributors/sl1mSha4dey/ignite?color=brightgreen&style=for-the-badge" />
     </p>
 </div>
 
@@ -19,7 +19,7 @@ This is **my personal** implementation with some added features.
 ## Additional Info
 The whole Ignite's workflow is based upon the current API of [raw.io](https://www.rawg.io). <br>
 In order to get the application up and running, you'll need an API Key which you can get by signing in 
-on the [raw.io website](https://www.rawg.io). <br>
+on the [raw.io website](https://www.rawg.io). <br><br>
 Once you've got your API Key, all you need to do is to create an `.env` file in the root folder of the application and create the following environment variable:
 ```
 REACT_APP_API_KEY="yourapikey"
@@ -27,7 +27,7 @@ REACT_APP_API_KEY="yourapikey"
 
 ## Demo 
 
-
+https://user-images.githubusercontent.com/58223071/209577258-b0397b74-405b-4b3e-8527-656340f07d33.mp4
 
 ## How to Install
 In order to install and use Waves you'll have to:
@@ -53,7 +53,7 @@ git clone https://github.com/sl1mSha4dey/capture.git
 <br />
 The other way is to click on the green button in the top right corner and go to <b>Download ZIP</b> and extract it on your machine. 
 
-
+<img width="908" alt="Screenshot 2022-12-26 alle 19 57 36" src="https://user-images.githubusercontent.com/58223071/209576781-351ba54d-c679-4a38-bdd5-b1829727984f.png">
 
 ### Start the application 
 Once you have the repository on your machine, navigate with your terminal to the folder where you have cloned or extracted it: 
