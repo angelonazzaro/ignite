@@ -16,11 +16,11 @@ function Game({game}) {
     }
 
     return (
-        <StyledGame onClick={loadDetailHandler}>
+        <StyledGame layoutId={game.id} onClick={loadDetailHandler}>
             <Link to={`/game/${game.id}`}>
-                <h3>{game.name}</h3>
+                <motion.h3 layoutId={`title ${game.id}`}>{game.name}</motion.h3>
                 <p>{game.released}</p>
-                <img src={smallImage(game.background_image, 640)} alt={game.name} />
+                <motion.img layoutId={`image ${game.id}`} src={smallImage(game.background_image, 640)} alt={game.name} />
             </Link>
         </StyledGame>
     );
