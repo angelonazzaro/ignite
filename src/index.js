@@ -6,12 +6,14 @@ import reportWebVitals from './reportWebVitals';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 import { gamesReducer } from './reducers/gamesReducer';
+import { detailsReducer } from './reducers/detailsReducer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const store = configureStore({
   reducer: {
-    games: gamesReducer
+    games: gamesReducer,
+    details: detailsReducer
   }
 });
 

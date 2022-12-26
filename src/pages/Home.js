@@ -7,6 +7,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 import Game from "../components/Game";
+import GameDetail from "../components/GameDetail";
 
 function Home() {
     const dispatch = useDispatch();
@@ -19,9 +20,18 @@ function Home() {
 
     return (
         <GameList>
+            <GameDetail />
             <h2>UpComing Games</h2>
             <Games>
                 {upComingGames.map((game) => <Game key={game.id} game={game} />)}
+            </Games>
+             <h2>Popular Games</h2>
+            <Games>
+                {popularGames.map((game) => <Game key={game.id} game={game} />)}
+            </Games>
+             <h2>New Games</h2>
+            <Games>
+                {newGames.map((game) => <Game key={game.id} game={game} />)}
             </Games>
         </GameList>
     );
