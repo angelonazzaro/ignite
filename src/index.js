@@ -8,6 +8,8 @@ import { Provider } from 'react-redux';
 import { gamesReducer } from './reducers/gamesReducer';
 import { detailsReducer } from './reducers/detailsReducer';
 
+import { BrowserRouter } from 'react-router-dom';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const store = configureStore({
@@ -20,7 +22,9 @@ const store = configureStore({
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>
 );
