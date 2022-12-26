@@ -4,10 +4,37 @@ import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
+import playstation from "../img/playstation.svg";
+import steam from "../img/steam.svg";
+import xbox from "../img/xbox.svg";
+import nintendo from "../img/nintendo.svg";
+import apple from "../img/apple.svg";
+import gamepad from "../img/gamepad.svg";
+
+import starEmpty from "../img/star-empty.png";
+import starFull from "../img/star-full.png";
+
 function GameDetail ({pathId}) {
 
     // Exit Details
     const navigationHistory = useNavigate();
+
+    // Get Platform icon
+    const getPlatformIcon = (platformName) => {
+        platformName = platformName.toLowerCase();
+
+        if (platformName.includes('playstation')) return playstation; 
+
+        if (platformName.includes('xbox')) return xbox; 
+
+        if (platformName.includes('nintendo')) return nintendo; 
+
+        if (platformName === 'pc') return steam; 
+
+        if (platformName === 'ios') return apple;
+
+        return gamepad;
+    }
 
     const exitDetailHandler = (e) => {
         const element = e.target; 
@@ -34,7 +61,7 @@ function GameDetail ({pathId}) {
                                 <h3>Platforms</h3>
                                 <Platforms>
                                     {game.platforms.map((data) => (
-                                        <h3 key={data.platform.id}>{data.platform.name}</h3>
+                                        <img key={data.platform.id} src={getPlatformIcon(data.platform.name)} alt={data.platform.name} />
                                     ))}
                                 </Platforms>
                             </Info>
