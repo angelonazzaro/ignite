@@ -1,4 +1,4 @@
-const baseURL = `https://api.rawg.io/api/games?key=${process.env.API_KEY}`;
+const baseURL = `https://api.rawg.io/api/games?key=${process.env.REACT_APP_API_KEY}`;
 
 const getCurrentMonth = () => {
     let month = new Date().getMonth() + 1; // Months' index starts at 0
@@ -24,8 +24,6 @@ const currentDate = `${currentYear}-${currentMonth}-${currentDay}`;
 const lastYear = `${currentYear - 1}-${currentMonth}-${currentDay}`;
 const nextYear = `${currentYear + 1}-${currentMonth}-${currentDay}`;
 
-export const getPopularGamesURL = () => {
-    return `${baseURL}&dates=${lastYear}, ${currentDate}&order=-rating&page_size=10`; 
-}
-
-console.log(getPopularGamesURL())
+export const getPopularGamesURL = () => `${baseURL}&dates=${lastYear},${currentDate}&ordering=-rating&page_size=10`; 
+export const getNewGamesURL = () => `${baseURL}&dates=${lastYear},${currentDate}&ordering=-added&page_size=10`;
+export const getUpComingGamesURL = () => `${baseURL}&dates=${currentDate},${nextYear}&ordering=-released&page_size=10`;
