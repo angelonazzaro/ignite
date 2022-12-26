@@ -36,6 +36,24 @@ function GameDetail ({pathId}) {
         return gamepad;
     }
 
+    // Get stars
+    const getRatingStars = () => {
+        const stars = [];
+        const rating = Math.floor(game.rating);  
+        let starType; 
+
+        for (let i = 1; i <= 5; i++) {
+            if (i <= rating)
+                starType = starFull; 
+            else 
+                starType = starEmpty;
+            
+            stars.push(<img src={starType} key={i} alt="star" />);
+        }
+
+        return stars;
+    }
+
     const exitDetailHandler = (e) => {
         const element = e.target; 
 
@@ -56,6 +74,7 @@ function GameDetail ({pathId}) {
                             <div className="rating">
                                 <motion.h3 layoutId={`title ${game.id}`}>{game.name}</motion.h3>
                                 <p>Rating: {game.rating}</p>
+                                {getRatingStars()}
                             </div>
                             <Info>
                                 <h3>Platforms</h3>
@@ -128,6 +147,12 @@ const Stats = styled(motion.div)`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    img {
+        width: 2rem;
+        height: 2rem;
+        display: inline;
+    }
 `;
 
 const Info = styled(motion.div)`
